@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-<center><h1 style="margin: 50px">ADD ARTICLES</h1> <a href="{{route('Articales.index')}}" class="btn btn-warning">Back</a></center>
+<center><h1 style="margin: 50px;">ADD ARTICLES</h1> <a href="{{route('Articales.index')}}" class="btn btn-warning">Back</a></center>
 <br>
 @if ($errors->any())
             @foreach ($errors->all() as $error)
