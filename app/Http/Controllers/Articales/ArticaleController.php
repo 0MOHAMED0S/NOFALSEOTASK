@@ -76,7 +76,7 @@ class ArticaleController extends Controller
     {
         $Articale = Articale::findOrFail($id);
         $request->validate([
-            'title' => 'required|string|max:255',
+            'title' => 'required|unique:articales,title|string',
             'file.*' => 'required|file|max:2048',
         ]);
         $Articale->title = $request['title'];
