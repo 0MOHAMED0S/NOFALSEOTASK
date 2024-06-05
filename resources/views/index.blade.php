@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <center>
-        <h1 style="margin: 50px">ARTICALES <a href="{{ route('Articales.create') }}" class="btn btn-warning">Create</a></h1>
+        <h1 style="margin: 50px">ARTICLES <a href="{{ route('Articales.create') }}" class="btn btn-warning">Create</a></h1>
     </center>
     <br>
     @if (session('success'))

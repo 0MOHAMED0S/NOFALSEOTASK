@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <center>
-        <h1 style="margin: 50px">UPDATE ARTICALE</h1> <a href="{{ route('Articales.index') }}" class="btn btn-warning">Back</a>
+        <h1 style="margin: 50px">UPDATE ARTICLE</h1> <a href="{{ route('Articales.index') }}" class="btn btn-warning">Back</a>
     </center>
     <br>
 @if ($errors->any())

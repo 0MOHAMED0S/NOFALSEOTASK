@@ -15,7 +15,6 @@ class ArticaleController extends Controller
     {
         $articales=Articale::get();
         return view('index',compact('articales'));
-
     }
 
     /**
@@ -33,7 +32,8 @@ class ArticaleController extends Controller
     {
         $request->validate([
             'title' => 'required|unique:articales,title|string',
-            'file.*' => 'required|file|max:50120'
+            'file' => 'required',
+            'file.*' => 'file|max:50120'
         ]);
         $title = $request['title'];
 
@@ -48,7 +48,7 @@ class ArticaleController extends Controller
             'title'=>$title,
             'paths'=>$fileJson
         ]);
-        return redirect()->route('Articales.index')->with('success','The Articale Created Successfuly');
+        return redirect()->route('Articales.index')->with('success','The Article Created Successfuly');
     }
 
 
@@ -90,7 +90,7 @@ class ArticaleController extends Controller
             $Articale->paths = $fileJson;
         }
         $Articale->save();
-        return redirect()->route('Articales.index')->with('success', 'Articale updated successfully');
+        return redirect()->route('Articales.index')->with('success', 'Article updated successfully');
     }
 
     /**
@@ -100,6 +100,6 @@ class ArticaleController extends Controller
     {
         $Articale = Articale::findOrFail($id);
         $Articale->delete();
-        return redirect()->route('Articales.index')->with('success', 'Articale Deleted successfully');
+        return redirect()->route('Articales.index')->with('success', 'Article Deleted successfully');
     }
 }
